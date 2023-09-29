@@ -3,10 +3,7 @@ package output;
 import field.Field;
 
 public class Printer {
-
-    Field field = new Field();
-
-    public void printField() {
+    public void printField(Field field) {
         System.out.println(field.getGrid());
     }
 }
