@@ -8,26 +8,34 @@ public class Tiktaktoe {
     Printer printer = new Printer();
     Scanner myScanner = new Scanner(System.in);
 
+    void printAlternatingXandO(int i) {
+        if (i % 2 == 0) {
+            System.out.println("Wo willst du ein X setzen?");
+        } else {
+            System.out.println("Wo willst du ein O setzen?");
+        }
+    }
+
+    String AlternateXAndO(int i) {
+        if (i % 2 == 0) {
+            return "X";
+        } else {
+            return "O";
+        }
+    }
+
+    void SolutionChecker(String field) {
+
+    }
+
     void startGame() {
         printer.printField(field);
-        System.out.println("Wo willst du ein X setzen?");
-        int befehl1 = myScanner.nextInt();
-        field.replaceCharacter(befehl1, "X");
-        printer.printField(field);
-        System.out.println("Wo willst du ein O setzen?");
-        int befehl2 = myScanner.nextInt();
-        befehl2 = myScanner.nextInt();
-        System.out.println("Wo willst du ein X setzen?");
-        int befehl3 = myScanner.nextInt();
-        befehl3 = myScanner.nextInt();
-        System.out.println("Wo willst du ein O setzen?");
-        int befehl4 = myScanner.nextInt();
-        befehl4 = myScanner.nextInt();
-        System.out.println("Wo willst du ein X setzen?");
-        int befehl5 = myScanner.nextInt();
-        befehl5 = myScanner.nextInt();
-        System.out.println("Wo willst du ein O setzen?");
-        int befehl6 = myScanner.nextInt();
-        befehl6 = myScanner.nextInt();
+        for (int i = 0; i <= 8; i++) {
+            printAlternatingXandO(i);
+            int input = myScanner.nextInt();
+            field.setPosition(input, AlternateXAndO(i));
+            field.printPosition();
+            printer.printField(field);
+        }
     }
 }
