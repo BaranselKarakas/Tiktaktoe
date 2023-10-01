@@ -22,6 +22,14 @@ public class Field {
         System.out.println(getGrid());
     }
 
+    public void updateGrid() {
+        grid = " " + position[7] + " | " + position[8] + " | " + position[9] + " \n" +
+                "___________\n" +
+                " " + position[4] + " | " + position[5] + " | " + position[6] + " \n" +
+                "___________\n" +
+                " " + position[1] + " | " + position[2] + " | " + position[3];
+    }
+
     public String[] getPosition() {
         return position;
     }
