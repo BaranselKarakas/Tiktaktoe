@@ -1,7 +1,7 @@
 public class MainApplication {
     public static void main(String[] args) {
-        Tiktaktoe tiktaktoe = new Tiktaktoe();
-        tiktaktoe.startGame();
+        Game game = new Game();
+        game.startGame();
 
     }
 }

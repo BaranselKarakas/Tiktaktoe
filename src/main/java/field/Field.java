@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Field {
     String[] position = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
     String grid =
             " " + position[7] + " | " + position[8] + " | " + position[9] + " \n" +
                     "___________\n" +
@@ -17,11 +18,20 @@ public class Field {
         return grid;
     }
 
-    public void printPosition() {
-        System.out.println(Arrays.toString(position));
+    public void printGrid() {
+        System.out.println(getGrid());
+    }
+
+    public String[] getPosition() {
+        return position;
     }
 
     public void setPosition(int index, String newValue) {
         position[index] = newValue;
     }
+
+    public void printPosition() {
+        System.out.println(Arrays.toString(getPosition()));
+    }
+
 }

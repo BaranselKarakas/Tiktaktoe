@@ -1,12 +1,12 @@
 import field.Field;
-import output.Printer;
 
 import java.util.Scanner;
 
-public class Tiktaktoe {
-    Field field = new Field();
-    Printer printer = new Printer();
+public class Game {
+
     Scanner myScanner = new Scanner(System.in);
+
+    Field field = new Field();
 
     void printAlternatingXandO(int i) {
         if (i % 2 == 0) {
@@ -29,13 +29,13 @@ public class Tiktaktoe {
     }
 
     void startGame() {
-        printer.printField(field);
+        field.printGrid();
         for (int i = 0; i <= 8; i++) {
             printAlternatingXandO(i);
             int input = myScanner.nextInt();
             field.setPosition(input, AlternateXAndO(i));
             field.printPosition();
-            printer.printField(field);
+            field.printGrid();
         }
     }
 }
