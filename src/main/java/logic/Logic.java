@@ -1,6 +1,7 @@
 package logic;
 
 import field.Field;
+import java.util.Scanner;
 
 public class Logic {
 
@@ -18,6 +19,29 @@ public class Logic {
     } else {
       return "O";
     }
+  }
+
+  //  public int numberValidation(Logic logic, Scanner myScanner, int i, int input) {
+  //    do {
+  //      logic.printAlternatingXandO(i);
+  //      input = myScanner.nextInt();
+  //      if (input < 1 || input > 9) {
+  //        System.out.println("Probiers nochmal");
+  //      }
+  //    } while (input < 1 || input > 9);
+  //    return input;
+  //  }
+
+  public int getInputFromUser(Scanner myScanner, int i) {
+    int input;
+    do {
+      printAlternatingXandO(i);
+      input = myScanner.nextInt();
+      if (input < 1 || input > 9) {
+        System.out.println("Probiers nochmal");
+      }
+    } while (input < 1 || input > 9);
+    return input;
   }
 
   public boolean solutionChecker(Field field) {
