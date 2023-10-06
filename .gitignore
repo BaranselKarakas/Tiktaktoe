@@ -4,6 +4,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 Tiktaktoe.iml
+src/main/java/test.java
 
 ### Eclipse ###
 .apt_generated

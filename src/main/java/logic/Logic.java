@@ -1,4 +1,4 @@
-package game_logic;
+package logic;
 
 import field.Field;
 
