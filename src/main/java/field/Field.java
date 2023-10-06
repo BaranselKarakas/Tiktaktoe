@@ -1,9 +1,9 @@
 package field;
 
 public class Field {
-    String[] position = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    private String[] position = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-    String grid =
+    private String grid =
             " " + position[7] + " | " + position[8] + " | " + position[9] + " \n" +
                     "___________\n" +
                     " " + position[4] + " | " + position[5] + " | " + position[6] + " \n" +
