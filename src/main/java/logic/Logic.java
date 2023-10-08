@@ -1,9 +1,13 @@
 package logic;
 
 import field.Field;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Logic {
+
+  private ArrayList<Integer> list = new ArrayList<>();
+  private int input = 0;
 
   public void printAlternatingXandO(int i) {
     if (i % 2 == 0) {
@@ -21,19 +25,7 @@ public class Logic {
     }
   }
 
-  //  public int numberValidation(Logic logic, Scanner myScanner, int i, int input) {
-  //    do {
-  //      logic.printAlternatingXandO(i);
-  //      input = myScanner.nextInt();
-  //      if (input < 1 || input > 9) {
-  //        System.out.println("Probiers nochmal");
-  //      }
-  //    } while (input < 1 || input > 9);
-  //    return input;
-  //  }
-
-  public int getInputFromUser(Scanner myScanner, int i) {
-    int input;
+  private void checkNumberbetween1and9(Scanner myScanner, int i) {
     do {
       printAlternatingXandO(i);
       input = myScanner.nextInt();
@@ -41,6 +33,16 @@ public class Logic {
         System.out.println("Probiers nochmal");
       }
     } while (input < 1 || input > 9);
+  }
+
+  public int validateInputFromUser(Scanner myScanner, int i) {
+    do {
+      checkNumberbetween1and9(myScanner, i);
+      if (list.contains(input)) {
+        System.out.println("Probiers nochmal");
+      }
+    } while (list.contains(input));
+    list.add(input);
     return input;
   }
 
@@ -60,10 +62,10 @@ public class Logic {
     for (String line : winLines)
       switch (line) {
         case "XXX":
-          System.out.println("X hat gewonnen");
+          System.out.println("X hat gewonnen!");
           return true;
         case "OOO":
-          System.out.println("O hat gewonnen");
+          System.out.println("O hat gewonnen!");
           return true;
       }
 

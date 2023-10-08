@@ -70,11 +70,6 @@ public class Field {
   }
 
   public void setPosition(int index, String newValue) {
-    //    do{
-    //        if (getPosition(index).equals(newValue)){
-    //            System.out.println("Probiers nochmal");
-    //        }
-    //    };
     position[index] = newValue;
   }
 }

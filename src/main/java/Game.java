@@ -13,7 +13,7 @@ public class Game {
   void startGame() {
     field.printGrid();
     for (int i = 0; i <= 8; i++) {
-      int input = logic.getInputFromUser(myScanner, i);
+      int input = logic.validateInputFromUser(myScanner, i);
       field.setPosition(input, logic.alternateXAndO(i));
       field.updateGrid();
       if (logic.solutionChecker(field)) {
@@ -21,5 +21,6 @@ public class Game {
       }
       field.printGrid();
     }
+    System.out.println("Untentschieden!");
   }
 }
